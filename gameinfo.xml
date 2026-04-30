@@ -1,0 +1,31 @@
+<gameList>
+  <game>
+    <path>./Half-Life\ 2.sh</path>
+    <name>Half-Life 2</name>
+    <image>./halflife2/cover.png</image>
+  </game>
+</gameList>
+
+<gameList>
+  <game>
+    <path>./Half-Life\ 2\ -\ EP1.sh</path>
+    <name>Half-Life 2 - EP1</name>
+    <image>./halflife2/cover_ep1.png</image>
+  </game>
+</gameList>
+
+<gameList>
+  <game>
+    <path>./Half-Life\ 2\ -\ EP2.sh</path>
+    <name>Half-Life 2 - EP2</name>
+    <image>./halflife2/cover_ep2.png</image>
+  </game>
+</gameList>
+
+<gameList>
+  <game>
+    <path>./Half-Life\ 2\ -\ Lost\ Coast.sh</path>
+    <name>Half-Life 2 - Lost Coast</name>
+    <image>./halflife2/cover_lostcoast.png</image>
+  </game>
+</gameList>

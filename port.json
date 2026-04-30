@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "name": "HalfLife2.zip",
+  "items": [
+    "Half-Life 2.sh",
+    "Half-Life 2 - EP1.sh",
+    "Half-Life 2 - EP2.sh",
+    "Half-Life 2 - Lost Coast.sh",
+    "halflife2"
+  ],
+  "items_opt": [],
+  "attr": {
+    "title": "Half Life 2",
+    "porter": [
+      "to be determined"
+    ],
+    "desc": "1998. HALF-LIFE sends a shock through the game industry with its combination of pounding action and continuous, immersive storytelling. Valve's debut title wins more than 50 game-of-the-year awards on its way to being named \"Best PC Game Ever\" by PC Gamer, and launches a franchise with more than eight million retail units sold worldwide.\n\nNOW. By taking the suspense, challenge and visceral charge of the original, and adding startling new realism and responsiveness, Half-Life 2 opens the door to a world where the player's presence affects everything around them, from the physical environment to the behaviors even the emotions of both friends and enemies.\n\nThe player again picks up the crowbar of research scientist Gordon Freeman, who finds himself on an alien-infested Earth being picked to the bone, its resources depleted, its populace dwindling. Freeman is thrust into the unenviable role of rescuing the world from the wrong he unleashed back at Black Mesa. And a lot of people he cares about are counting on him.\n\nThe intense, real-time gameplay of Half-Life 2 is made possible only by Source®, Valve's new proprietary engine technology. Source provides major enhancements in:\n\nCharacters: Advanced facial animation system delivers the most sophisticated in-game characters ever seen. With 40 distinct facial \"muscles,\" human characters convey the full array of human emotion, and respond to the player with fluidity and intelligence.\nPhysics: From pebbles to water to 2-ton trucks respond as expected, as they obey the laws of mass, friction, gravity, and buoyancy.\nGraphics: Source's shader-based renderer, like the one used at Pixar to create movies such as Toy Story® and Monster's, Inc.®, creates the most beautiful and realistic environments ever seen in a video game.\nAI: Neither friends nor enemies charge blindly into the fray. They can assess threats, navigate tricky terrain, and fashion weapons from whatever is at hand.",
+    "desc_md": null,
+    "inst": "Install port, copy over game files, do not overwrite any files.",
+    "inst_md": null,
+    "genres": [
+      "action",
+      "adventure",
+      "fps"
+    ],
+    "image": null,
+    "rtr": false,
+    "exp": true,
+    "runtime": null,
+    "reqs": [
+      "hires"
+    ],
+    "arch": [
+      "aarch64"
+    ]
+  }
+}
