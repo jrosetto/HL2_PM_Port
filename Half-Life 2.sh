@@ -1,13 +1,16 @@
 #!/bin/bash
 # PORTMASTER: half-life2.zip, Half-Life 2.sh
 
-# Check if PortMaster folder exists
+XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+
 if [ -d "/opt/system/Tools/PortMaster/" ]; then
-    controlfolder="/opt/system/Tools/PortMaster"
+  controlfolder="/opt/system/Tools/PortMaster"
 elif [ -d "/opt/tools/PortMaster/" ]; then
-    controlfolder="/opt/tools/PortMaster"
+  controlfolder="/opt/tools/PortMaster"
+elif [ -d "$XDG_DATA_HOME/PortMaster/" ]; then
+  controlfolder="$XDG_DATA_HOME/PortMaster"
 else
-    controlfolder="/roms/ports/PortMaster"
+  controlfolder="/roms/ports/PortMaster"
 fi
 
 # Source control.txt and tasksetter from PortMaster
@@ -57,7 +60,7 @@ if [[ $CFW_NAME == "muOS" ]]; then
   export LD_PRELOAD="${GAMEDIR}/lib/libSDL2-2.0.so.0.2800.5:${LD_PRELOAD}"
 fi
 
-$GPTOKEYB "hl2_launcher" &
+$GPTOKEYB "hl2_launcher.gptk" &
 $TASKSET ./hl2_launcher -gamepadui -fullscreen -normal -w 640 -h 480 2>&1 | tee -a ./log.txt
 
 $ESUDO kill -9 $(pidof gptokeyb)
