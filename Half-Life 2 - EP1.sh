@@ -61,7 +61,7 @@ if [[ $CFW_NAME == "muOS" ]]; then
 fi
 
 $GPTOKEYB "hl2_launcher" &
-$TASKSET ./hl2_launcher -gamepadui -game episodic -fullscreen -normal -w 640 -h 480 2>&1 | tee -a ./ep1log.txt
+$TASKSET ./hl2_launcher -gamepadui -game episodic -fullscreen -high 2>&1 | tee -a ./ep1log.txt
 
 $ESUDO kill -9 $(pidof gptokeyb)
 unset SDL_GAMECONTROLLERCONFIG
