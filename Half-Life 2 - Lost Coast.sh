@@ -30,8 +30,8 @@ cd "$GAMEDIR"
 
 # Grab text output...
 $ESUDO chmod 666 "$CUR_TTY"
-$ESUDO touch log.txt
-$ESUDO chmod 666 log.txt
+$ESUDO touch lclog.txt
+$ESUDO chmod 666 lclog.txt
 $ESUDO chmod 666 /dev/uinput
 export TERM=linux
 printf "\033c" > "$CUR_TTY"
@@ -60,8 +60,9 @@ if [[ $CFW_NAME == "muOS" ]]; then
   export LD_PRELOAD="${GAMEDIR}/lib/libSDL2-2.0.so.0.2800.5:${LD_PRELOAD}"
 fi
 
+> "${GAMEDIR}/lclog.txt"
 $GPTOKEYB "hl2_launcher" &
-$TASKSET ./hl2_launcher -gamepadui -game lostcoast -fullscreen -high 2>&1 | tee -a ./lclog.txt
+$TASKSET ./hl2_launcher -gamepadui -game lostcoast -fullscreen -high 2>&1 | tee -a "${GAMEDIR}/lclog.txt"
 
 $ESUDO kill -9 $(pidof gptokeyb)
 unset SDL_GAMECONTROLLERCONFIG

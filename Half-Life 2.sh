@@ -60,8 +60,9 @@ if [[ $CFW_NAME == "muOS" ]]; then
   export LD_PRELOAD="${GAMEDIR}/lib/libSDL2-2.0.so.0.2800.5:${LD_PRELOAD}"
 fi
 
+> "${GAMEDIR}/log.txt"
 $GPTOKEYB "hl2_launcher" &
-$TASKSET ./hl2_launcher -gamepadui -fullscreen -high 2>&1 | tee -a ./log.txt
+$TASKSET ./hl2_launcher -gamepadui -fullscreen -high 2>&1 | tee -a "${GAMEDIR}/log.txt"
 
 $ESUDO kill -9 $(pidof gptokeyb)
 unset SDL_GAMECONTROLLERCONFIG
