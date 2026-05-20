@@ -30,35 +30,13 @@ cd "$GAMEDIR"
 
 # Grab text output...
 $ESUDO chmod 666 "$CUR_TTY"
-$ESUDO touch ep2log.txt
-$ESUDO chmod 666 ep2log.txt
+$ESUDO touch log.txt
+$ESUDO chmod 666 log.txt
 $ESUDO chmod 666 /dev/uinput
 export TERM=linux
 printf "\033c" > "$CUR_TTY"
 
-# Install half life binaries / config files
-if [[ -f "${GAMEDIR}/engine.zip" ]]; then
-    if [[ ! -f "${GAMEDIR}/hl2/hl2_pak_000.vpk" ]]; then
-        echo "Missing game files, see README for more info." > "$CUR_TTY"
-        sleep 5
-        printf "\033c" > "$CUR_TTY"
-        $ESUDO systemctl restart oga_events &
-        exit 1
-    fi
-
-    echo "Extracting engine." > "$CUR_TTY"
-
-    $ESUDO unzip "${GAMEDIR}/engine.zip" | $ESUDO tee -a ./log.txt
-
-    # Mark step as done
-    $ESUDO rm -fv "${GAMEDIR}/engine.zip" | $ESUDO tee -a ./log.txt
-fi
-
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
-
-if [[ $CFW_NAME == "muOS" ]]; then
-  export LD_PRELOAD="${GAMEDIR}/lib/libSDL2-2.0.so.0.2800.5:${LD_PRELOAD}"
-fi
 
 > "${GAMEDIR}/ep2log.txt"
 $GPTOKEYB "hl2_launcher" &
