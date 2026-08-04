@@ -28,6 +28,8 @@ GAMEDIR="${PORTDIR}/halflife2"
 # Change directory to the game directory
 cd "$GAMEDIR"
 
+export LD_LIBRARY_PATH="$GAMEDIR/libs.aarch64:$GAMEDIR/bin:${LD_LIBRARY_PATH:-}"
+
 # Grab text output...
 $ESUDO chmod 666 "$CUR_TTY"
 $ESUDO touch log.txt
@@ -38,7 +40,6 @@ printf "\033c" > "$CUR_TTY"
 
 export SDL_GAMECONTROLLERCONFIG="$sdl_controllerconfig"
 
-> "${GAMEDIR}/ep2log.txt"
 $GPTOKEYB "hl2_launcher" &
 $TASKSET ./hl2_launcher -gamepadui -game ep2 -fullscreen -high 2>&1 | tee -a "${GAMEDIR}/ep2log.txt"
 
